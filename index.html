@@ -29,8 +29,9 @@ img{display:block;max-width:100%}
 button{font-family:var(--font-body);cursor:pointer;border:none;background:none}
 input,select{font-family:var(--font-body)}
 a{color:inherit;text-decoration:none}
-.page-wrap{display:flex;flex-direction:column;min-height:100vh}
-.main-wrap{flex:1;max-width:1440px;margin:0 auto;width:100%;padding:0 20px 60px}
+.main-wrap{max-width:1440px;margin:0 auto;width:100%;padding:0 20px 60px}
+
+/* ── HEADER ── */
 .site-header{background:linear-gradient(135deg,var(--c7) 0%,var(--c6) 45%,var(--c5) 100%);color:#fff;position:relative;overflow:hidden}
 .site-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 90% at 105% 40%,rgba(0,180,166,.2) 0%,transparent 65%),radial-gradient(ellipse 50% 60% at -5% 70%,rgba(255,255,255,.05) 0%,transparent 55%);pointer-events:none}
 .header-wave{position:absolute;bottom:-1px;left:0;right:0;line-height:0}
@@ -42,6 +43,8 @@ a{color:inherit;text-decoration:none}
 .hdr-text h1{font-family:var(--font-display);font-size:clamp(1.3rem,3.5vw,1.95rem);font-weight:800;line-height:1.15;letter-spacing:-.3px}
 .hdr-text p{font-size:.82rem;opacity:.65;margin-top:3px}
 .hdr-pill{margin-right:auto;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);border-radius:var(--r-full);padding:5px 14px;font-size:.72rem;font-weight:600;white-space:nowrap;backdrop-filter:blur(8px)}
+
+/* ── STATS ── */
 .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:1440px;margin:0 auto;padding:0 20px;transform:translateY(-28px)}
 .stat-card{background:var(--card-bg);border-radius:var(--r-lg);box-shadow:var(--shadow-md);border:1px solid var(--border);padding:16px 18px;display:flex;align-items:center;gap:14px;transition:transform var(--t),box-shadow var(--t)}
 .stat-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
@@ -52,6 +55,8 @@ a{color:inherit;text-decoration:none}
 .stat-ico.amber{background:#fef3c7;color:#d97706}
 .stat-val{font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--c6);line-height:1}
 .stat-lbl{font-size:.68rem;font-weight:600;color:var(--text2);margin-top:3px;letter-spacing:.3px}
+
+/* ── CONTROLS ── */
 .controls-wrap{max-width:1440px;margin:0 auto;padding:0 20px 18px}
 .controls-card{background:var(--card-bg);border-radius:var(--r-xl);box-shadow:var(--shadow-sm);border:1px solid var(--border);padding:18px 20px}
 .search-wrap{position:relative;margin-bottom:14px}
@@ -62,25 +67,92 @@ a{color:inherit;text-decoration:none}
 .search-clr{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:22px;height:22px;border-radius:50%;background:var(--c2);color:var(--c6);font-size:.7rem;display:none;align-items:center;justify-content:center;transition:background var(--t)}
 .search-clr:hover{background:var(--c3)}
 .search-clr.on{display:flex}
-.filter-row{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:10px;align-items:end}
+.filter-row{display:grid;grid-template-columns:1fr 1fr 1fr 1fr auto;gap:10px;align-items:end}
 .fg{display:flex;flex-direction:column;gap:5px}
 .fl{font-size:.65rem;font-weight:700;color:var(--text2);letter-spacing:.5px;text-transform:uppercase}
 .fs{padding:9px 12px;border:1.5px solid var(--border);border-radius:var(--r-md);font-size:.82rem;background:var(--c0);color:var(--text1);cursor:pointer;outline:none;transition:border-color var(--t)}
 .fs:focus{border-color:var(--c4)}
 .btn-reset{padding:9px 18px;border:1.5px solid var(--border);border-radius:var(--r-md);font-size:.8rem;font-weight:600;color:var(--text2);white-space:nowrap;transition:all var(--t);height:40px;display:flex;align-items:center;gap:5px}
 .btn-reset:hover{background:var(--c0);border-color:var(--c3);color:var(--c5)}
+
+/* ── META ROW ── */
 .meta-row{max-width:1440px;margin:0 auto;padding:0 20px 14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
 .result-count{font-size:.78rem;color:var(--text2)}
 .result-count strong{color:var(--c5);font-weight:700}
 .ts{font-size:.7rem;color:var(--text3)}
-.cards-grid{max-width:1440px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
-.dept-section{max-width:1440px;margin:0 auto;padding:0 20px 8px}
-.dept-label{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-.dept-label-line{flex:1;height:1px;background:linear-gradient(to left,transparent,var(--c2))}
-.dept-label-line.r{background:linear-gradient(to right,transparent,var(--c2))}
-.dept-tag{font-family:var(--font-display);font-size:.78rem;font-weight:700;color:var(--c5);background:var(--c0);border:1px solid var(--c2);border-radius:var(--r-full);padding:4px 16px;white-space:nowrap}
-.dept-cnt{font-size:.68rem;color:var(--text3);font-weight:600}
-.dept-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-bottom:28px}
+
+/* ── FLAT GRID ── */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+
+/* ── GROUPED: BRANCH HEADER ── */
+.branch-block{margin-bottom:40px}
+.branch-header{
+  display:flex;align-items:center;gap:14px;margin-bottom:20px;
+  padding:18px 22px;
+  background:linear-gradient(135deg,var(--c6) 0%,var(--c5) 100%);
+  border-radius:var(--r-lg);color:#fff;
+  box-shadow:var(--shadow-md)
+}
+.branch-icon{
+  width:46px;height:46px;border-radius:var(--r-md);
+  background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.25);
+  display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0
+}
+.branch-title{
+  font-family:var(--font-display);font-size:1.1rem;font-weight:800;
+  line-height:1.2;flex:1
+}
+.branch-meta{
+  font-size:.72rem;opacity:.75;margin-top:2px
+}
+.branch-badge{
+  background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.25);
+  border-radius:var(--r-full);padding:4px 14px;
+  font-size:.72rem;font-weight:700;white-space:nowrap
+}
+
+/* ── GROUPED: DEPT HEADER ── */
+.dept-block{margin-bottom:28px}
+.dept-header{
+  display:flex;align-items:center;gap:12px;margin-bottom:14px
+}
+.dept-header-line{flex:1;height:1px;background:linear-gradient(to left,transparent,var(--c2))}
+.dept-header-line.r{background:linear-gradient(to right,transparent,var(--c2))}
+.dept-tag{
+  font-family:var(--font-display);font-size:.8rem;font-weight:700;
+  color:var(--c5);background:var(--c0);border:1px solid var(--c2);
+  border-radius:var(--r-full);padding:5px 18px;white-space:nowrap;
+  display:flex;align-items:center;gap:8px
+}
+.dept-count-badge{
+  background:var(--c2);color:var(--c6);border-radius:var(--r-full);
+  padding:1px 8px;font-size:.65rem;font-weight:700
+}
+
+/* ── GROUPED: DEPT-ONLY HEADER ── */
+.dept-only-block{margin-bottom:28px}
+.dept-only-header{
+  display:flex;align-items:center;gap:14px;margin-bottom:14px;
+  padding:14px 18px;
+  background:var(--card-bg);border:1px solid var(--border);
+  border-radius:var(--r-lg);border-right:4px solid var(--c4);
+  box-shadow:var(--shadow-sm)
+}
+.dept-only-icon{
+  width:38px;height:38px;border-radius:var(--r-md);
+  background:var(--c0);display:flex;align-items:center;justify-content:center;
+  font-size:1rem;flex-shrink:0
+}
+.dept-only-title{
+  font-family:var(--font-display);font-size:.92rem;font-weight:700;
+  color:var(--c6);flex:1
+}
+.dept-only-badge{
+  background:var(--c1);color:var(--c5);border-radius:var(--r-full);
+  padding:3px 12px;font-size:.7rem;font-weight:700;white-space:nowrap
+}
+
+/* ── EMPLOYEE CARD ── */
 .emp-card{background:var(--card-bg);border-radius:var(--r-xl);box-shadow:var(--shadow-card);border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column;transition:transform var(--t),box-shadow var(--t);animation:cardIn .3s ease both}
 @keyframes cardIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 .emp-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
@@ -112,37 +184,38 @@ a{color:inherit;text-decoration:none}
 .abtn.amob:hover{background:#dcfce7}
 .abtn.awa{background:#f0fdf4;color:#15803d;border-color:#86efac}
 .abtn.awa:hover{background:#d1fae5}
-.state-box{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:280px;gap:14px;text-align:center;padding:40px 20px;max-width:1440px;margin:0 auto}
+
+/* ── STATES ── */
+.state-box{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:280px;gap:14px;text-align:center;padding:40px 20px}
 .state-ico{width:68px;height:68px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem}
-.state-ico.load{background:var(--c0)}
 .state-ico.err{background:#fee2e2}
 .state-ico.mt{background:var(--c0)}
 .state-ttl{font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--text1)}
 .state-desc{font-size:.82rem;color:var(--text2);max-width:320px}
 .state-btn{padding:10px 22px;background:var(--c5);color:#fff;border-radius:var(--r-md);font-size:.82rem;font-weight:600;transition:background var(--t)}
 .state-btn:hover{background:var(--c6)}
-.spin{width:36px;height:36px;border:3px solid var(--c1);border-top-color:var(--c4);border-radius:50%;animation:rot .7s linear infinite}
-@keyframes rot{to{transform:rotate(360deg)}}
-.skel-grid{max-width:1440px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+
+/* ── SKELETON ── */
+.skel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
 .skel-card{background:var(--card-bg);border-radius:var(--r-xl);border:1px solid var(--border);overflow:hidden}
 .sk{background:linear-gradient(90deg,var(--c0) 0%,var(--c1) 50%,var(--c0) 100%);background-size:200% 100%;animation:shim 1.4s infinite;border-radius:6px}
 @keyframes shim{0%{background-position:200% 0}100%{background-position:-200% 0}}
-.sk-bar{height:4px;border-radius:0}
-.sk-h{padding:18px 18px 12px;display:flex;gap:14px}
+.sk-bar{height:4px;border-radius:0}.sk-h{padding:18px 18px 12px;display:flex;gap:14px}
 .sk-av{width:48px;height:48px;border-radius:var(--r-md);flex-shrink:0}
-.sk-inf{flex:1}
-.sk-l{height:11px;margin-bottom:8px}
-.sk-b{padding:0 18px 12px}
-.sk-r{height:9px;margin-bottom:9px}
-.sk-f{padding:10px 14px 14px;display:flex;gap:6px}
+.sk-inf{flex:1}.sk-l{height:11px;margin-bottom:8px}.sk-b{padding:0 18px 12px}
+.sk-r{height:9px;margin-bottom:9px}.sk-f{padding:10px 14px 14px;display:flex;gap:6px}
 .sk-btn{flex:1;height:34px;border-radius:var(--r-md)}
+
+/* ── TOAST ── */
 .toast-wrap{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);z-index:9999;display:flex;flex-direction:column;gap:7px;align-items:center;pointer-events:none}
 .toast{background:var(--c7);color:#fff;padding:9px 20px;border-radius:var(--r-full);font-size:.78rem;font-weight:600;box-shadow:var(--shadow-lg);animation:tin .22s ease,tout .28s ease 1.6s forwards}
 @keyframes tin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 @keyframes tout{to{opacity:0;transform:translateY(-4px)}}
+
+/* ── RESPONSIVE ── */
 @media(max-width:960px){
   .stats-row{grid-template-columns:1fr 1fr}
-  .filter-row{grid-template-columns:1fr 1fr}
+  .filter-row{grid-template-columns:1fr 1fr 1fr}
   .btn-reset{grid-column:1/-1;width:100%;justify-content:center}
 }
 @media(max-width:600px){
@@ -153,12 +226,10 @@ a{color:inherit;text-decoration:none}
   .hdr-text h1{font-size:1.25rem}
   .hdr-text p{font-size:.7rem}
   .hdr-pill{display:none}
-  .site-header::after{height:22px}
   .stats-row{padding:0 12px;gap:8px;transform:translateY(-16px);grid-template-columns:1fr 1fr}
   .stat-card{padding:10px 12px;gap:8px;border-radius:16px;min-height:72px}
   .stat-ico{width:36px;height:36px;font-size:.95rem;border-radius:10px}
-  .stat-val{font-size:1rem}
-  .stat-lbl{font-size:.58rem}
+  .stat-val{font-size:1rem}.stat-lbl{font-size:.58rem}
   .controls-wrap{padding:0 12px 12px}
   .controls-card{padding:12px;border-radius:20px}
   .search-input{height:46px;font-size:.86rem;border-radius:14px}
@@ -166,31 +237,30 @@ a{color:inherit;text-decoration:none}
   .fl{font-size:.6rem}
   .fs{height:40px;font-size:.78rem;border-radius:10px}
   .btn-reset{height:38px;font-size:.76rem;border-radius:10px}
-  .main-wrap{padding:0 0 40px}
-  .cards-grid,.skel-grid,.dept-section,.meta-row{padding:0 12px}
-  .cards-grid,.dept-grid{grid-template-columns:1fr;gap:12px}
-  .dept-grid{gap:10px}
+  .main-wrap{padding:0 12px 40px}
+  .cards-grid{grid-template-columns:1fr;gap:12px}
   .emp-card{border-radius:18px}
   .card-head{padding:13px 13px 9px;gap:10px}
   .card-av{width:42px;height:42px;font-size:.88rem}
-  .card-name{font-size:.85rem}
-  .card-jobtag{font-size:.63rem}
+  .card-name{font-size:.85rem}.card-jobtag{font-size:.63rem}
   .card-body{padding:0 13px 9px}
-  .irow{font-size:.72rem;gap:7px}
-  .ilbl{min-width:46px;font-size:.68rem}
+  .irow{font-size:.72rem;gap:7px}.ilbl{min-width:46px;font-size:.68rem}
   .card-act{padding:8px 11px 12px;gap:5px}
   .abtn{min-height:36px;font-size:.66rem;border-radius:10px;min-width:calc(50% - 3px)}
+  .branch-header{padding:14px 16px;border-radius:var(--r-md)}
+  .branch-title{font-size:.95rem}
+  .dept-only-header{padding:12px 14px}
 }
 @media(max-width:380px){
   .stats-row{grid-template-columns:1fr 1fr}
   .filter-row{grid-template-columns:1fr}
 }
 .hidden{display:none!important}
-.vhide{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header class="site-header">
   <div class="header-inner">
     <div class="hdr-logo">
@@ -213,23 +283,41 @@ a{color:inherit;text-decoration:none}
   </div>
 </header>
 
-<div class="stats-row" id="statsRow">
+<!-- STATS -->
+<div class="stats-row">
   <div class="stat-card"><div class="stat-ico blue">👥</div><div><div class="stat-val" id="stEmp">—</div><div class="stat-lbl">إجمالي الموظفين</div></div></div>
   <div class="stat-card"><div class="stat-ico teal">🏢</div><div><div class="stat-val" id="stDep">—</div><div class="stat-lbl">الأقسام</div></div></div>
   <div class="stat-card"><div class="stat-ico navy">🌐</div><div><div class="stat-val" id="stBr">—</div><div class="stat-lbl">الفروع</div></div></div>
   <div class="stat-card"><div class="stat-ico amber">✉️</div><div><div class="stat-val" id="stMail">—</div><div class="stat-lbl">إيميلات العمل</div></div></div>
 </div>
 
+<!-- CONTROLS -->
 <div class="controls-wrap">
   <div class="controls-card">
+
+    <!-- Search -->
     <div class="search-wrap">
       <svg class="search-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       <input id="srch" class="search-input" type="search" placeholder="ابحث بالاسم، الإيميل، الرقم الوظيفي، القسم، الوظيفة، الجوال…" autocomplete="off" aria-label="بحث"/>
       <button id="srchClr" class="search-clr" aria-label="مسح">✕</button>
     </div>
+
+    <!-- Filters -->
     <div class="filter-row">
-      <div class="fg"><label class="fl" for="fDep">القسم</label><select id="fDep" class="fs"><option value="">كل الأقسام</option></select></div>
-      <div class="fg"><label class="fl" for="fBr">الفرع</label><select id="fBr" class="fs"><option value="">كل الفروع</option></select></div>
+
+      <!-- فلتر القسم -->
+      <div class="fg">
+        <label class="fl" for="fDep">القسم</label>
+        <select id="fDep" class="fs"><option value="">كل الأقسام</option></select>
+      </div>
+
+      <!-- فلتر الفرع -->
+      <div class="fg">
+        <label class="fl" for="fBr">الفرع</label>
+        <select id="fBr" class="fs"><option value="">كل الفروع</option></select>
+      </div>
+
+      <!-- الترتيب -->
       <div class="fg">
         <label class="fl" for="fSort">الترتيب</label>
         <select id="fSort" class="fs">
@@ -243,40 +331,68 @@ a{color:inherit;text-decoration:none}
           <option value="branch">الفرع أ–ي</option>
         </select>
       </div>
+
+      <!-- طريقة العرض -->
+      <div class="fg">
+        <label class="fl" for="fView">طريقة العرض</label>
+        <select id="fView" class="fs">
+          <option value="flat">عرض عادي</option>
+          <option value="by_dept">تجميع حسب القسم</option>
+          <option value="by_branch_dept">تجميع حسب الفرع ثم القسم</option>
+        </select>
+      </div>
+
+      <!-- إعادة ضبط -->
       <button class="btn-reset" id="btnReset">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.51"/></svg>
         إعادة ضبط
       </button>
     </div>
+
   </div>
 </div>
 
+<!-- META -->
 <div class="meta-row">
   <div class="result-count" id="resCnt"></div>
   <div class="ts" id="tsLabel"></div>
 </div>
 
+<!-- MAIN CONTENT -->
 <div class="main-wrap">
+
+  <!-- Skeleton -->
   <div id="skelState" class="skel-grid"></div>
+
+  <!-- Error -->
   <div id="errState" class="state-box hidden">
     <div class="state-ico err">⚠️</div>
     <div class="state-ttl">تعذّر تحميل البيانات</div>
     <div class="state-desc">حدث خطأ أثناء الاتصال. تحقق من اتصالك بالإنترنت وحاول مجدداً.</div>
     <button class="state-btn" id="btnRetry">إعادة المحاولة</button>
   </div>
+
+  <!-- Empty -->
   <div id="emptyState" class="state-box hidden">
     <div class="state-ico mt">🔍</div>
     <div class="state-ttl">لا توجد نتائج</div>
     <div class="state-desc">لم يتم العثور على موظفين مطابقين لمعايير البحث أو الفلاتر المختارة.</div>
   </div>
+
+  <!-- Cards output -->
   <div id="cardsOut"></div>
+
 </div>
 
+<!-- Toast -->
 <div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
 
 <script>
 'use strict';
 
+/* ═══════════════════════════════════════════════
+   CONFIG
+═══════════════════════════════════════════════ */
 const API = 'https://opensheet.elk.sh/1kQBJmuu3Uz0LrImDUKrwsKXA3xyr9f75bjh-6B_s8FI/Sheet1';
 
 const C = {
@@ -289,19 +405,23 @@ const C = {
 
 let ALL = [];
 
-/* ── HELPERS ─────────────────────────────────────────── */
+/* ═══════════════════════════════════════════════
+   HELPERS
+═══════════════════════════════════════════════ */
 
+/* قراءة حقل بأمان — تُعامل '-' كفراغ */
 function v(obj, key) {
   const s = String(obj[key] ?? '').trim();
   return s === '-' ? '' : s;
 }
 
-/* تحويل آمن للأرقام — يُستخدم للرقم الوظيفي و dep id */
+/* تحويل آمن للأرقام */
 function toNumber(value) {
   const n = Number(String(value || '').trim());
   return Number.isFinite(n) ? n : 999999;
 }
 
+/* تطبيع عربي للبحث */
 function norm(s) {
   if (!s) return '';
   return s
@@ -313,19 +433,23 @@ function norm(s) {
     .toLowerCase().trim();
 }
 
+/* Escape HTML */
 function esc(s) {
   return String(s || '')
-    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;').replace(/'/g,'&#039;');
 }
 
+/* Debounce */
 function deb(fn, ms) { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; }
 
+/* أحرف أولى من الاسم */
 function initials(name) {
   if (!name) return '؟';
   return name.trim().split(/\s+/).slice(0, 2).map(w => w[0] || '').join('');
 }
 
+/* عداد متحرك */
 function countUp(id, target) {
   const el = document.getElementById(id); if (!el) return;
   let n = 0; const step = Math.max(1, Math.ceil(target / 28));
@@ -333,14 +457,16 @@ function countUp(id, target) {
   go();
 }
 
+/* Toast */
 function toast(msg) {
   const t = document.createElement('div'); t.className = 'toast'; t.textContent = msg;
   document.getElementById('toastWrap').appendChild(t);
   setTimeout(() => t.remove(), 2100);
 }
 
-/* ── FETCH + MERGE ───────────────────────────────────── */
-
+/* ═══════════════════════════════════════════════
+   FETCH + MERGE
+═══════════════════════════════════════════════ */
 async function loadData() {
   showSkel();
   try {
@@ -396,8 +522,9 @@ function mergeRows(rows) {
   return [...map.values()];
 }
 
-/* ── FILTERS ─────────────────────────────────────────── */
-
+/* ═══════════════════════════════════════════════
+   FILTERS
+═══════════════════════════════════════════════ */
 function buildFilters() {
   const depts = [...new Set(ALL.map(e => e.dept).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'ar'));
   const brs   = [...new Set(ALL.map(e => e.branch).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'ar'));
@@ -417,8 +544,9 @@ function fill(id, opts, ph) {
   });
 }
 
-/* ── STATS ───────────────────────────────────────────── */
-
+/* ═══════════════════════════════════════════════
+   STATS
+═══════════════════════════════════════════════ */
 function setStats() {
   const totalMails = ALL.reduce((s, e) => s + e.emails.length, 0);
   const depts  = new Set(ALL.map(e => e.dept).filter(Boolean));
@@ -435,86 +563,68 @@ function setTimestamp() {
     'آخر تحديث: ' + now.toLocaleString('ar-SA', { year:'numeric', month:'long', day:'numeric', hour:'2-digit', minute:'2-digit' });
 }
 
-/* ── SORT ────────────────────────────────────────────── */
-
-/*
-  الخيارات المتاحة:
-  default   → الرقم الوظيفي تصاعدي (رقمياً)
-  name      → الاسم أبجدياً
-  emp_asc   → الرقم الوظيفي تصاعدي (رقمياً)
-  emp_desc  → الرقم الوظيفي تنازلي (رقمياً)
-  dept_id   → dep id تصاعدي، ثم الرقم الوظيفي تصاعدي داخل نفس القسم
-  dept_a    → اسم القسم أبجدياً أ–ي، ثم الرقم الوظيفي تصاعدي
-  dept_z    → اسم القسم أبجدياً ي–أ، ثم الرقم الوظيفي تصاعدي
-  branch    → الفرع أبجدياً
-*/
+/* ═══════════════════════════════════════════════
+   SORT
+═══════════════════════════════════════════════ */
 function sortArr(arr, mode) {
   return [...arr].sort((a, b) => {
     switch (mode) {
-
       case 'name':
         return (a.name || '').localeCompare(b.name || '', 'ar');
-
       case 'emp_asc':
       case 'default':
         return toNumber(a.empNo) - toNumber(b.empNo);
-
       case 'emp_desc':
         return toNumber(b.empNo) - toNumber(a.empNo);
-
       case 'dept_id': {
-        // أولاً: dep id تصاعدي رقمياً
-        const depDiff = toNumber(a.depId) - toNumber(b.depId);
-        if (depDiff !== 0) return depDiff;
-        // ثانياً: الرقم الوظيفي تصاعدي داخل نفس القسم
-        return toNumber(a.empNo) - toNumber(b.empNo);
+        const d = toNumber(a.depId) - toNumber(b.depId);
+        return d !== 0 ? d : toNumber(a.empNo) - toNumber(b.empNo);
       }
-
       case 'dept_a': {
-        // أولاً: اسم القسم أبجدياً أ–ي
-        const deptDiff = (a.dept || '').localeCompare(b.dept || '', 'ar');
-        if (deptDiff !== 0) return deptDiff;
-        // ثانياً: الرقم الوظيفي تصاعدي داخل نفس القسم
-        return toNumber(a.empNo) - toNumber(b.empNo);
+        const d = (a.dept || '').localeCompare(b.dept || '', 'ar');
+        return d !== 0 ? d : toNumber(a.empNo) - toNumber(b.empNo);
       }
-
       case 'dept_z': {
-        // أولاً: اسم القسم أبجدياً ي–أ
-        const deptDiff = (b.dept || '').localeCompare(a.dept || '', 'ar');
-        if (deptDiff !== 0) return deptDiff;
-        // ثانياً: الرقم الوظيفي تصاعدي داخل نفس القسم
-        return toNumber(a.empNo) - toNumber(b.empNo);
+        const d = (b.dept || '').localeCompare(a.dept || '', 'ar');
+        return d !== 0 ? d : toNumber(a.empNo) - toNumber(b.empNo);
       }
-
       case 'branch':
         return (a.branch || '').localeCompare(b.branch || '', 'ar');
-
       default:
         return toNumber(a.empNo) - toNumber(b.empNo);
     }
   });
 }
 
-/* ── RENDER ──────────────────────────────────────────── */
-
+/* ═══════════════════════════════════════════════
+   MAIN RENDER PIPELINE
+═══════════════════════════════════════════════ */
 function renderView() {
-  const q    = norm(document.getElementById('srch').value);
-  const dep  = document.getElementById('fDep').value;
-  const br   = document.getElementById('fBr').value;
-  const sort = document.getElementById('fSort').value;
+  const q      = norm(document.getElementById('srch').value);
+  const dep    = document.getElementById('fDep').value;
+  const br     = document.getElementById('fBr').value;
+  const sort   = document.getElementById('fSort').value;
+  const view   = document.getElementById('fView').value;
 
+  /* 1. تطبيق الفلاتر والبحث */
   let res = ALL.filter(emp => {
     if (dep && emp.dept   !== dep) return false;
     if (br  && emp.branch !== br)  return false;
     if (q) {
-      const hay = norm([emp.name, emp.dept, emp.branch, emp.job, emp.sup, emp.ext, emp.mob, emp.empNo, ...emp.emails].join(' '));
+      const hay = norm([
+        emp.name, emp.dept, emp.branch, emp.job,
+        emp.sup, emp.ext, emp.mob, emp.empNo,
+        ...emp.emails
+      ].join(' '));
       if (!hay.includes(q)) return false;
     }
     return true;
   });
 
+  /* 2. تطبيق الترتيب */
   res = sortArr(res, sort);
 
+  /* 3. تحديث عداد النتائج */
   document.getElementById('resCnt').innerHTML = res.length
     ? `عرض <strong>${res.length.toLocaleString('ar-SA')}</strong> موظف` : '';
 
@@ -530,16 +640,27 @@ function renderView() {
     return;
   }
   empty.classList.add('hidden');
-  renderFlat(res, out);
+
+  /* 4. اختيار طريقة العرض */
+  if (view === 'by_branch_dept') {
+    renderGroupedByBranchThenDept(res, out);
+  } else if (view === 'by_dept') {
+    renderGroupedByDept(res, out);
+  } else {
+    renderFlat(res, out);
+  }
 }
 
+/* ═══════════════════════════════════════════════
+   RENDER: FLAT — عرض عادي
+═══════════════════════════════════════════════ */
 function renderFlat(list, container) {
   const frag = document.createDocumentFragment();
   const grid = document.createElement('div');
   grid.className = 'cards-grid';
   list.forEach((emp, i) => {
     const card = buildCard(emp);
-    card.style.animationDelay = Math.min(i * 25, 300) + 'ms';
+    card.style.animationDelay = Math.min(i * 20, 300) + 'ms';
     grid.appendChild(card);
   });
   frag.appendChild(grid);
@@ -547,8 +668,185 @@ function renderFlat(list, container) {
   container.appendChild(frag);
 }
 
-/* ── CARD ────────────────────────────────────────────── */
+/* ═══════════════════════════════════════════════
+   RENDER: GROUPED BY DEPT — تجميع حسب القسم
+═══════════════════════════════════════════════ */
+function renderGroupedByDept(list, container) {
+  /*
+    بناء Map: deptKey → { label, depId, employees[] }
+    ثم ترتيب الأقسام حسب dep id تصاعدياً
+  */
+  const deptMap = new Map();
 
+  list.forEach(emp => {
+    const deptName = emp.dept || 'غير محدد';
+    if (!deptMap.has(deptName)) {
+      deptMap.set(deptName, {
+        label: deptName,
+        depId: emp.depId,
+        employees: []
+      });
+    }
+    deptMap.get(deptName).employees.push(emp);
+  });
+
+  /* ترتيب الأقسام: dep id أولاً، ثم أبجدي */
+  const sortedDepts = [...deptMap.values()].sort((a, b) => {
+    const d = toNumber(a.depId) - toNumber(b.depId);
+    return d !== 0 ? d : a.label.localeCompare(b.label, 'ar');
+  });
+
+  const frag = document.createDocumentFragment();
+  let delay = 0;
+
+  sortedDepts.forEach(dept => {
+    const block = document.createElement('div');
+    block.className = 'dept-only-block';
+
+    /* عنوان القسم */
+    const header = document.createElement('div');
+    header.className = 'dept-only-header';
+    header.innerHTML = `
+      <div class="dept-only-icon">🏬</div>
+      <div class="dept-only-title">${esc(dept.label)}</div>
+      <div class="dept-only-badge">${dept.employees.length} موظف</div>
+    `;
+    block.appendChild(header);
+
+    /* كروت الموظفين */
+    const grid = document.createElement('div');
+    grid.className = 'cards-grid';
+
+    /* ترتيب الموظفين داخل القسم حسب الرقم الوظيفي تصاعدياً */
+    const sorted = [...dept.employees].sort((a, b) => toNumber(a.empNo) - toNumber(b.empNo));
+
+    sorted.forEach(emp => {
+      const card = buildCard(emp);
+      card.style.animationDelay = Math.min(delay * 20, 400) + 'ms';
+      delay++;
+      grid.appendChild(card);
+    });
+    block.appendChild(grid);
+    frag.appendChild(block);
+  });
+
+  container.innerHTML = '';
+  container.appendChild(frag);
+}
+
+/* ═══════════════════════════════════════════════
+   RENDER: GROUPED BY BRANCH THEN DEPT
+   تجميع حسب الفرع ثم القسم
+═══════════════════════════════════════════════ */
+function renderGroupedByBranchThenDept(list, container) {
+  /*
+    بناء Map متداخلة:
+    branchKey → { label, brId, depts: Map }
+    deptKey   → { label, depId, employees[] }
+  */
+  const branchMap = new Map();
+
+  list.forEach(emp => {
+    const branchName = emp.branch || 'غير محدد';
+    const deptName   = emp.dept   || 'غير محدد';
+
+    if (!branchMap.has(branchName)) {
+      branchMap.set(branchName, {
+        label: branchName,
+        brId:  emp.brId,
+        depts: new Map()
+      });
+    }
+    const branch = branchMap.get(branchName);
+
+    if (!branch.depts.has(deptName)) {
+      branch.depts.set(deptName, {
+        label: deptName,
+        depId: emp.depId,
+        employees: []
+      });
+    }
+    branch.depts.get(deptName).employees.push(emp);
+  });
+
+  /* ترتيب الفروع: branch id أولاً، ثم أبجدي */
+  const sortedBranches = [...branchMap.values()].sort((a, b) => {
+    const d = toNumber(a.brId) - toNumber(b.brId);
+    return d !== 0 ? d : a.label.localeCompare(b.label, 'ar');
+  });
+
+  const frag = document.createDocumentFragment();
+  let delay = 0;
+
+  sortedBranches.forEach(branch => {
+    const branchBlock = document.createElement('div');
+    branchBlock.className = 'branch-block';
+
+    /* إجمالي موظفي الفرع */
+    const totalEmp = [...branch.depts.values()].reduce((s, d) => s + d.employees.length, 0);
+
+    /* عنوان الفرع */
+    const brHeader = document.createElement('div');
+    brHeader.className = 'branch-header';
+    brHeader.innerHTML = `
+      <div class="branch-icon">🏢</div>
+      <div>
+        <div class="branch-title">${esc(branch.label)}</div>
+        <div class="branch-meta">${branch.depts.size} قسم · ${totalEmp} موظف</div>
+      </div>
+      <div class="branch-badge">${esc(branch.label)}</div>
+    `;
+    branchBlock.appendChild(brHeader);
+
+    /* ترتيب الأقسام داخل الفرع: dep id أولاً، ثم أبجدي */
+    const sortedDepts = [...branch.depts.values()].sort((a, b) => {
+      const d = toNumber(a.depId) - toNumber(b.depId);
+      return d !== 0 ? d : a.label.localeCompare(b.label, 'ar');
+    });
+
+    sortedDepts.forEach(dept => {
+      const deptBlock = document.createElement('div');
+      deptBlock.className = 'dept-block';
+
+      /* عنوان القسم */
+      const deptHeader = document.createElement('div');
+      deptHeader.className = 'dept-header';
+      deptHeader.innerHTML = `
+        <div class="dept-header-line r"></div>
+        <div class="dept-tag">
+          ${esc(dept.label)}
+          <span class="dept-count-badge">${dept.employees.length}</span>
+        </div>
+        <div class="dept-header-line"></div>
+      `;
+      deptBlock.appendChild(deptHeader);
+
+      /* كروت الموظفين — مرتبة حسب الرقم الوظيفي تصاعدياً */
+      const grid = document.createElement('div');
+      grid.className = 'cards-grid';
+
+      const sorted = [...dept.employees].sort((a, b) => toNumber(a.empNo) - toNumber(b.empNo));
+
+      sorted.forEach(emp => {
+        const card = buildCard(emp);
+        card.style.animationDelay = Math.min(delay * 20, 500) + 'ms';
+        delay++;
+        grid.appendChild(card);
+      });
+      deptBlock.appendChild(grid);
+      branchBlock.appendChild(deptBlock);
+    });
+
+    frag.appendChild(branchBlock);
+  });
+
+  container.innerHTML = '';
+  container.appendChild(frag);
+}
+
+/* ═══════════════════════════════════════════════
+   CARD BUILDER
+═══════════════════════════════════════════════ */
 function buildCard(emp) {
   const card = document.createElement('article');
   card.className = 'emp-card';
@@ -557,12 +855,12 @@ function buildCard(emp) {
   const pri = emp.emails[0] || '';
 
   let info = '';
-  if (emp.branch) info += irow(icoBuilding(), 'الفرع',    esc(emp.branch));
-  if (emp.dept)   info += irow(icoDept(),     'القسم',    esc(emp.dept));
-  if (emp.sup)    info += irow(icoPerson(),   'المشرف',   esc(emp.sup));
-  if (emp.ext)    info += irow(icoPhone(),    'الداخلي',  esc(emp.ext));
-  if (emp.mob)    info += irow(icoMob(),      'الجوال',   esc(emp.mob));
-  if (emp.pmail)  info += irow(icoMail(),     'الشخصي',   esc(emp.pmail));
+  if (emp.branch) info += irow(icoBuilding(), 'الفرع',   esc(emp.branch));
+  if (emp.dept)   info += irow(icoDept(),     'القسم',   esc(emp.dept));
+  if (emp.sup)    info += irow(icoPerson(),   'المشرف',  esc(emp.sup));
+  if (emp.ext)    info += irow(icoPhone(),    'الداخلي', esc(emp.ext));
+  if (emp.mob)    info += irow(icoMob(),      'الجوال',  esc(emp.mob));
+  if (emp.pmail)  info += irow(icoMail(),     'الشخصي',  esc(emp.pmail));
   if (emp.emails.length) {
     const chips = emp.emails.map(e => `<span class="echip">${esc(e)}</span>`).join('');
     info += irow(icoMail(), 'الإيميل', `<div class="email-stack">${chips}</div>`);
@@ -596,8 +894,9 @@ function irow(ico, lbl, val) {
   return `<div class="irow"><span class="iico" aria-hidden="true">${ico}</span><span class="ilbl">${lbl}</span><span class="ival">${val}</span></div>`;
 }
 
-/* ── ACTIONS ─────────────────────────────────────────── */
-
+/* ═══════════════════════════════════════════════
+   ACTIONS
+═══════════════════════════════════════════════ */
 function doMail(e) { window.location.href = 'mailto:' + e; }
 
 function doCopy(btn, email) {
@@ -615,17 +914,29 @@ function doCopy(btn, email) {
 
 function doCall(n) { window.location.href = 'tel:' + n; }
 
-/* ── SKELETON / ERROR ────────────────────────────────── */
-
+/* ═══════════════════════════════════════════════
+   SKELETON / ERROR
+═══════════════════════════════════════════════ */
 function showSkel() {
   const sk = document.getElementById('skelState');
   sk.innerHTML = '';
   for (let i = 0; i < 8; i++) {
     sk.innerHTML += `<div class="skel-card">
       <div class="sk sk-bar"></div>
-      <div class="sk-h"><div class="sk sk-av"></div><div class="sk-inf"><div class="sk sk-l" style="width:65%"></div><div class="sk sk-l" style="width:42%"></div></div></div>
-      <div class="sk-b"><div class="sk sk-r" style="width:78%"></div><div class="sk sk-r" style="width:60%"></div><div class="sk sk-r" style="width:70%"></div></div>
-      <div class="sk-f"><div class="sk sk-btn"></div><div class="sk sk-btn"></div><div class="sk sk-btn"></div></div>
+      <div class="sk-h"><div class="sk sk-av"></div><div class="sk-inf">
+        <div class="sk sk-l" style="width:65%"></div>
+        <div class="sk sk-l" style="width:42%"></div>
+      </div></div>
+      <div class="sk-b">
+        <div class="sk sk-r" style="width:78%"></div>
+        <div class="sk sk-r" style="width:60%"></div>
+        <div class="sk sk-r" style="width:70%"></div>
+      </div>
+      <div class="sk-f">
+        <div class="sk sk-btn"></div>
+        <div class="sk sk-btn"></div>
+        <div class="sk sk-btn"></div>
+      </div>
     </div>`;
   }
   sk.classList.remove('hidden');
@@ -642,21 +953,23 @@ function showErr() {
 }
 function hideErr() { document.getElementById('errState').classList.add('hidden'); }
 
-/* ── SVG ICONS ───────────────────────────────────────── */
+/* ═══════════════════════════════════════════════
+   SVG ICONS
+═══════════════════════════════════════════════ */
+function S(s,p){return `<svg width="${s||17}" height="${s||17}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;}
+function icoBuilding(s){return S(s,'<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 22V12h6v10M3 9h18M9 9V3M15 9V3"/>');}
+function icoDept(s)    {return S(s,'<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>');}
+function icoPerson(s)  {return S(s,'<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>');}
+function icoPhone(s)   {return S(s,'<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.38a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>');}
+function icoMob(s)     {return S(s,'<rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>');}
+function icoMail(s)    {return S(s,'<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>');}
+function icoCopy(s)    {return S(s,'<rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>');}
+function icoCheck(s)   {return S(s,'<polyline points="20 6 9 17 4 12"/>');}
+function icoWA(s)      {return S(s,'<path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>');}
 
-function S(s, p) { return `<svg width="${s||17}" height="${s||17}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`; }
-function icoBuilding(s) { return S(s, '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 22V12h6v10M3 9h18M9 9V3M15 9V3"/>'); }
-function icoDept(s)     { return S(s, '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>'); }
-function icoPerson(s)   { return S(s, '<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>'); }
-function icoPhone(s)    { return S(s, '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.38a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>'); }
-function icoMob(s)      { return S(s, '<rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>'); }
-function icoMail(s)     { return S(s, '<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>'); }
-function icoCopy(s)     { return S(s, '<rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>'); }
-function icoCheck(s)    { return S(s, '<polyline points="20 6 9 17 4 12"/>'); }
-function icoWA(s)       { return S(s, '<path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>'); }
-
-/* ── EVENTS ──────────────────────────────────────────── */
-
+/* ═══════════════════════════════════════════════
+   EVENTS
+═══════════════════════════════════════════════ */
 const srch    = document.getElementById('srch');
 const srchClr = document.getElementById('srchClr');
 
@@ -669,7 +982,7 @@ srchClr.addEventListener('click', () => {
   srch.value = ''; srchClr.classList.remove('on'); srch.focus(); renderView();
 });
 
-['fDep','fBr','fSort'].forEach(id =>
+['fDep','fBr','fSort','fView'].forEach(id =>
   document.getElementById(id).addEventListener('change', renderView)
 );
 
@@ -677,12 +990,15 @@ document.getElementById('btnReset').addEventListener('click', () => {
   srch.value = ''; srchClr.classList.remove('on');
   ['fDep','fBr'].forEach(id => document.getElementById(id).value = '');
   document.getElementById('fSort').value = 'default';
+  document.getElementById('fView').value = 'flat';
   renderView();
 });
 
 document.getElementById('btnRetry').addEventListener('click', loadData);
 
-/* ── INIT ────────────────────────────────────────────── */
+/* ═══════════════════════════════════════════════
+   INIT
+═══════════════════════════════════════════════ */
 loadData();
 </script>
 </body>
